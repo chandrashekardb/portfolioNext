@@ -1,10 +1,10 @@
-import React from 'react'
-import webservice from '../../public/assets/portfolio/webservice.png';
-import game from '../../public/assets/portfolio/game.png';
-import weather from '../../public/assets/portfolio/weather.png';
-import spotify from '../../public/assets/portfolio/spotify.png';
-import Link from 'next/link';
-import Image from 'next/image';
+import React from "react";
+import webservice from "../../public/assets/portfolio/webservice.png";
+import game from "../../public/assets/portfolio/game.png";
+import weather from "../../public/assets/portfolio/weather.png";
+import spotify from "../../public/assets/portfolio/spotify.png";
+import Image from "next/image";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   const portfolios=[
@@ -33,28 +33,35 @@ export const getStaticProps = async () => {
       url:"spotify-clone",
     }
   ];
+
+
   return {
     props: { portfolios },
   };
 }
-
 const PortfoliosRoute = ({ portfolios }) => {
+
   return (
     <div id="portfolio" className="w-full">
       <div className="max-w-screen-xl mx-auto pt-24 p-4 text-center md:text-left">
-        <h2 className="text-5xl md:text-7xl tracking-wider uppercase text-blue-500 font-bold pb-16">
-          portfolio
+        <p className="text-5xl md:text-7xl tracking-wider uppercase text-blue-500 font-bold">
+          Portfolio
+        </p>
+        <h2 className="py-4 max-w-lg">
+          Entrance gloating i nothing soul quoth desolate. My he bird still just
+          of theeby lattice. Nearly ominous leave god is.
         </h2>
-
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {portfolios.map(({ id, title, imageSrc, url }) => (
             <Link key={id} href={`/portfolio/${url}`}>
-              <div className="cursor-pointer group shadow-md shadow-gray-600 overflow-hidden rounded-md">
+              <div
+                key={id}
+                className="cursor-pointer group shadow-md shadow-gray-600 overflow-hidden rounded-md bg-blend-overlay"
+              >
                 <Image
                   src={imageSrc}
-                  alt={title}
-                  className="rounded-md duration-200 
-              hover:scale-110"
+                  alt="random"
+                  className="rounded-md duration-200 hover:scale-105"
                 />
                 <h2 className="text-center text-base capitalize my-4 font-light duration-200 group-hover:underline underline-offset-4">
                   {title}
@@ -67,5 +74,6 @@ const PortfoliosRoute = ({ portfolios }) => {
     </div>
   );
 };
+
 
 export default PortfoliosRoute
