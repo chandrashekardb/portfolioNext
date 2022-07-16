@@ -98,7 +98,7 @@ const Navbar = () => {
             <Link href="/#home">
               <h2
                 onClick={() => setNav(false)}
-                className="text-3xl lg:text-4xl font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer"
+                className="text-2xl lg:text-4xl font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer"
               >
                 Chandrashekar
               </h2>
